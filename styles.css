@@ -3,8 +3,7 @@
 }
 
 body {
-  margin: 0;
-  background: center/1000% url("images/favicon.ico");
+  background-color: greenyellow;
 }
 
 .car {
