@@ -18,6 +18,7 @@ function pressKey(event) {
   $car.className = 'car ' + currentDirection;
 }
 
+//
 var $car = document.querySelector('.car');
 document.addEventListener('keydown', pressKey);
 
