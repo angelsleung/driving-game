@@ -8,10 +8,7 @@ body {
 
 .car {
   width: 10rem;
-}
-
-.north {
-  transform: rotate(-90deg);
+  transition: transform 1s;
 }
 
 .south {
@@ -20,4 +17,8 @@ body {
 
 .west {
   transform: rotate(180deg);
+}
+
+.north {
+  transform: rotate(270deg);
 }

@@ -18,6 +18,10 @@ function pressKey(event) {
   $car.className = 'car ' + currentDirection;
 }
 
+// function turnRight() {
+
+// }
+
 var $car = document.querySelector('.car');
 document.addEventListener('keydown', pressKey);
 
