@@ -22,7 +22,6 @@ function turnCar(turnValue) {
     newDirectionIndex = 0;
   }
   car.currentDirection = car.directions[newDirectionIndex];
-  // $car.className = 'car ' + car.currentDirection;
   car.degrees += turnValue * 90;
   $car.style.transform = 'rotate(' + car.degrees + 'deg)';
 }
