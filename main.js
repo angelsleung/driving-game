@@ -32,5 +32,6 @@ var car = {
   directions: ['east', 'south', 'west', 'north'],
   currentDirection: 'east',
   x: 0,
-  y: 0
+  y: 0,
+  isStarted: false
 };
