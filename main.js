@@ -4,7 +4,12 @@ function pressKey(event) {
   } else if (event.key === 'ArrowRight') {
     turnCar(1);
   } else if (event.key === ' ') {
-    setInterval(startCar, 16);
+    if (car.isStarted) {
+      stopCar();
+    } else {
+      car.isStarted = true;
+      car.intervalID = setInterval(startCar, 16);
+    }
   }
 }
 
@@ -25,6 +30,10 @@ function startCar() {
   $car.style.left = car.x + 'rem';
 }
 
+function stopCar() {
+  clearInterval(car.intervalID);
+}
+
 var $car = document.querySelector('.car');
 document.addEventListener('keydown', pressKey);
 
@@ -33,5 +42,6 @@ var car = {
   currentDirection: 'east',
   x: 0,
   y: 0,
-  isStarted: false
+  isStarted: false,
+  intervalID: null
 };
