@@ -7,20 +7,21 @@ function pressKey(event) {
   } else {
     return;
   }
-  var currentDirectionIndex = directions.indexOf(currentDirection);
+  var currentDirectionIndex = car.directions.indexOf(car.currentDirection);
   var newDirectionIndex = currentDirectionIndex + turn;
   if (newDirectionIndex < 0) {
     newDirectionIndex = 3;
   } else if (newDirectionIndex > 3) {
     newDirectionIndex = 0;
   }
-  currentDirection = directions[newDirectionIndex];
-  $car.className = 'car ' + currentDirection;
+  car.currentDirection = car.directions[newDirectionIndex];
+  $car.className = 'car ' + car.currentDirection;
 }
 
-//
 var $car = document.querySelector('.car');
 document.addEventListener('keydown', pressKey);
 
-var directions = ['east', 'south', 'west', 'north'];
-var currentDirection = 'east';
+var car = {
+  directions: ['east', 'south', 'west', 'north'],
+  currentDirection: 'east'
+};
