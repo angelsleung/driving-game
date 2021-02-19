@@ -4,6 +4,8 @@ function pressKey(event) {
     turn = -1;
   } else if (event.key === 'ArrowRight') {
     turn = 1;
+  } else if (event.key === ' ') {
+    return;
   } else {
     return;
   }
