@@ -26,8 +26,19 @@ function turnCar(turnValue) {
 }
 
 function startCar() {
-  car.x += 1;
-  $car.style.left = car.x + 'rem';
+  if (car.currentDirection === 'east') {
+    car.x += 1;
+    $car.style.left = car.x + 'px';
+  } else if (car.currentDirection === 'west') {
+    car.x -= 1;
+    $car.style.left = car.x + 'px';
+  } else if (car.currentDirection === 'south') {
+    car.y += 1;
+    $car.style.top = car.y + 'px';
+  } else {
+    car.y -= 1;
+    $car.style.top = car.y + 'px';
+  }
 }
 
 function stopCar() {
