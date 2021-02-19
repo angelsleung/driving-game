@@ -25,6 +25,7 @@ document.addEventListener('keydown', pressKey);
 
 var car = {
   directions: ['east', 'south', 'west', 'north'],
-  currentDirection: 'east'
-
+  currentDirection: 'east',
+  x: 0,
+  y: 0
 };
