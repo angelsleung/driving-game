@@ -22,15 +22,28 @@ function turnCar(turnValue) {
     newDirectionIndex = 0;
   }
   car.currentDirection = car.directions[newDirectionIndex];
-  $car.className = 'car ' + car.currentDirection;
+  car.degrees += turnValue * 90;
+  $car.style.transform = 'rotate(' + car.degrees + 'deg)';
 }
 
 function startCar() {
-  car.x += 1;
-  $car.style.left = car.x + 'rem';
+  if (car.currentDirection === 'east') {
+    car.x += 1;
+    $car.style.left = car.x + 'rem';
+  } else if (car.currentDirection === 'west') {
+    car.x -= 1;
+    $car.style.left = car.x + 'rem';
+  } else if (car.currentDirection === 'south') {
+    car.y += 1;
+    $car.style.top = car.y + 'rem';
+  } else {
+    car.y -= 1;
+    $car.style.top = car.y + 'rem';
+  }
 }
 
 function stopCar() {
+  car.isStarted = false;
   clearInterval(car.intervalID);
 }
 
@@ -40,7 +53,8 @@ var car = {
   x: 0,
   y: 0,
   isStarted: false,
-  intervalID: null
+  intervalID: null,
+  degrees: 0
 };
 
 var $car = document.querySelector('.car');
