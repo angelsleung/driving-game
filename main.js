@@ -34,9 +34,6 @@ function stopCar() {
   clearInterval(car.intervalID);
 }
 
-var $car = document.querySelector('.car');
-document.addEventListener('keydown', pressKey);
-
 var car = {
   directions: ['east', 'south', 'west', 'north'],
   currentDirection: 'east',
@@ -45,3 +42,6 @@ var car = {
   isStarted: false,
   intervalID: null
 };
+
+var $car = document.querySelector('.car');
+document.addEventListener('keydown', pressKey);
