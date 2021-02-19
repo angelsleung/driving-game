@@ -31,6 +31,7 @@ function startCar() {
 }
 
 function stopCar() {
+  car.isStarted = false;
   clearInterval(car.intervalID);
 }
 
