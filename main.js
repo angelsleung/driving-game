@@ -1,14 +1,16 @@
 function pressKey(event) {
-  var turn = null;
   if (event.key === 'ArrowLeft') {
-    turn = -1;
+    turnCar(-1);
   } else if (event.key === 'ArrowRight') {
-    turn = 1;
-  } else {
-    return;
+    turnCar(1);
+  } else if (event.key === ' ') {
+    setInterval(startCar, 16);
   }
+}
+
+function turnCar(turnValue) {
   var currentDirectionIndex = car.directions.indexOf(car.currentDirection);
-  var newDirectionIndex = currentDirectionIndex + turn;
+  var newDirectionIndex = currentDirectionIndex + turnValue;
   if (newDirectionIndex < 0) {
     newDirectionIndex = 3;
   } else if (newDirectionIndex > 3) {
@@ -18,10 +20,17 @@ function pressKey(event) {
   $car.className = 'car ' + car.currentDirection;
 }
 
+function startCar() {
+  car.x += 1;
+  $car.style.left = car.x + 'rem';
+}
+
 var $car = document.querySelector('.car');
 document.addEventListener('keydown', pressKey);
 
 var car = {
   directions: ['east', 'south', 'west', 'north'],
-  currentDirection: 'east'
+  currentDirection: 'east',
+  x: 0,
+  y: 0
 };

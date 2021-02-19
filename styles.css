@@ -9,6 +9,7 @@ body {
 .car {
   width: 10rem;
   transition: transform 1s;
+  position: absolute;
 }
 
 .south {
