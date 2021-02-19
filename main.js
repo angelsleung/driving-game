@@ -23,8 +23,6 @@ function turnCar(turnValue) {
 function startCar() {
   car.x += 1;
   $car.style.left = car.x + 'rem';
-  // car.y += 1;
-  // $car.style.top = car.y + 'rem';
 }
 
 var $car = document.querySelector('.car');
